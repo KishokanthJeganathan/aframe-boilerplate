@@ -8,20 +8,22 @@
   </head>
   <body>
     <a-scene>
-      <a-assets>
-        <a-asset-item id="girl" src="https://raw.githubusercontent.com/KishokanthJeganathan/3d-mode-/main/free_091_aya_obj/scene.gltf"></a-asset-item >
-        </a-assets>
-
-        <a-sky color="pink"></a-sky>
-        
-        
+      <a-assets timeout="30000">
+        <a-asset-item id="spinosaurus" src="https://raw.githubusercontent.com/KishokanthJeganathan/3d-mode-/main/free_091_aya_obj/scene.gltf"></a-asset-item>
+      </a-assets>
     
-      <a-entity gltf-model="#girl" scale="0.0009 0.0009 0.0009" position="0 1 -1"  animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"> </a-entity>
-
-   
-
-</a-sphere>  
-      
+      <a-camera position="0 1.2 0"></a-camera>
+    
+      <!-- 2D environment omitted for simplicity -->
+    
+      <a-entity id="dino" position="-1 0 -3" scale="0.5 0.5 0.5">
+        <a-entity position="0 2.15 0" rotation="0 55 0"
+                  gltf-model="#spinosaurus"
+                  animation-mixer
+                  shadow="cast: true; receive: false"></a-entity>
+      </a-entity>
+    
+      <!-- Lights configuration omitted for simplicity -->
     </a-scene>
   </body>
 
